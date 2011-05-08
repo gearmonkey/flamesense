@@ -12,4 +12,4 @@ Note that to get the script running you need to [apply for a musicmetric api key
 
 Not sure where to start?  After putting your key in the right place try running 
 
-`$python firealarm.py http://www.exquisitetweets.com/collection/atl/410`
+`$python firealarm.py http://www.exquisitetweets.com/collection/RodBegbie/402`
