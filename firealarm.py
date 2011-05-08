@@ -60,7 +60,7 @@ def main(argv):
 	print 'fetching the conversation at', argv[1]
 	raw_data = urllib2.urlopen(argv[1]).read()
 	status_IDs = process_exquisite(raw_data)
-	status_IDs.reverse() #flip them to be in written order
+	# status_IDs.reverse() #flip them, or not...
 	
 	print 'Is the conversation a flame war?'
 	sentiments = map(lambda x:determine_tweet_sentiment(x), status_IDs)
