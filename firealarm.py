@@ -73,7 +73,13 @@ def main(argv):
 		print "\tmaybe"
 	
 	print "Where's the troll?"
-	winner_idx = find_max_neg_delta(sentiments)
+	if sentiments[0] == 1 and sentiments[1] == 1:
+		#special case for a troll right out the gate
+		winner_idx = 0
+		print "(It's the first message, this conversation was never civil…)"
+	else:
+		winner_idx = find_max_neg_delta(sentiments)
+
 	try:
 		print '\t', re.findall('(http://twitter.com/[\w]*/status/'+\
 				str(status_IDs[winner_idx])+')">[\d]', raw_data)[0]
