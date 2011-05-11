@@ -50,11 +50,6 @@ def find_max_neg_delta(senti_list):
 	last_senti = senti_list[0]
 	winner_idx = None
 	for idx, current_senti in enumerate(senti_list[1:]):
-		log.debug("idx: {0}, current: {1}, last: {2}, winner: {3}, max_neg: {4}".format(idx, 
-												current_senti,
-												last_senti,
-												winner_idx,
-												max_neg_delta))
 		if current_senti - last_senti < max_neg_delta:
 			max_neg_delta = current_senti - last_senti
 			winner_idx = idx+1
@@ -99,7 +94,7 @@ def main(argv):
 	return 0
 	
 if __name__ == '__main__':
-	logging.basicConfig(level=logging.DEBUG, 
+	logging.basicConfig(level=logging.INFO, 
 		format='%(asctime)s %(levelname)s %(message)s')
 	sys.exit(main(sys.argv))
 
